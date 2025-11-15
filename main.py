@@ -1,44 +1,33 @@
 import requests
 
-url = 'https://v2.jokeapi.dev/joke/Any'
-
-try:
-    response = requests.get(url)
-
-    if response.status_code == 200:
+def fetch_joke(url):
+    try:
+        response = requests.get(url)
+        response.raise_for_status()
         joke_data = response.json()
-
+        
+        # Basic joke parsing
         if joke_data.get('type') == 'single':
-            joke_text = joke_data.get('joke', '')
+            return joke_data.get('joke', '')
         elif joke_data.get('type') == 'twopart':
-            joke_text = f"{joke_data.get('setup', '')} {joke_data.get('delivery', '')}"
-        else:
-            joke_text = str(joke_data)
+            return f"{joke_data.get('setup', '')} {joke_data.get('delivery', '')}"
+        return str(joke_data)
+    except requests.exceptions.RequestException as e:
+        return f"API error: {e}"
+    except Exception as e:
+        return f"Parsing error: {e}"
 
-        print(joke_text)
-
+def main():
+    with requests.Session() as session:
+        # Any joke
+        url_any = 'https://v2.jokeapi.dev/joke/Any'
+        print(fetch_joke(url_any))
+        
+        # Programming joke category
         category = 'Programming'
-        category_url = f'https://v2.jokeapi.dev/joke/{category}'
+        url_category = f'https://v2.jokeapi.dev/joke/{category}'
+        joke_text = fetch_joke(url_category)
+        print(f"\nCategory: {category}\n{joke_text}")
 
-        category_response = requests.get(category_url)
-
-        if category_response.status_code == 200:
-            category_joke_data = category_response.json()
-
-            category_name = category_joke_data.get('category', category)
-
-            if category_joke_data.get('type') == 'single':
-                category_joke_text = category_joke_data.get('joke', '')
-            elif category_joke_data.get('type') == 'twopart':
-                category_joke_text = f"{category_joke_data.get('setup', '')} {category_joke_data.get('delivery', '')}"
-            else:
-                category_joke_text = str(category_joke_data)
-
-            print(f"\nCategory: {category_name}")
-            print(category_joke_text)
-
-except requests.exceptions.RequestException as e:
-    print(f"An error occurred: {e}")
-except Exception as e:
-    print(f"An unexpected error occurred: {e}")
-
+if __name__ == "__main__":
+    main()
