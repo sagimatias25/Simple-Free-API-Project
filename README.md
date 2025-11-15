@@ -156,6 +156,4 @@ This project is open for free use.
 - [Python Requests Docs](https://requests.readthedocs.io/)
 - [GitHub Markdown Guide](https://guides.github.com/features/mastering-markdown/)
 
----
 
-**Made with love by sagimatias25**
