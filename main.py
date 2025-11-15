@@ -7,10 +7,8 @@ def fetch_joke(url):
         response.raise_for_status()
         joke_data = response.json()
         
-        # Get category from API
         category = joke_data.get('category', 'Unknown')
         
-        # Parse joke based on type
         if joke_data.get('type') == 'single':
             joke_text = joke_data.get('joke', '')
         elif joke_data.get('type') == 'twopart':
@@ -27,13 +25,11 @@ def fetch_joke(url):
 
 def main():
     with requests.Session() as session:
-        # Any joke
         url_any = 'https://v2.jokeapi.dev/joke/Any'
         joke_text, api_category = fetch_joke(url_any)
         print(f"Category from API: {api_category}")
         print(joke_text)
         
-        # Programming joke category
         category = 'Programming'
         url_category = f'https://v2.jokeapi.dev/joke/{category}'
         joke_text, api_category = fetch_joke(url_category)
@@ -42,3 +38,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
