@@ -71,16 +71,16 @@ Because they can't C#
 
 ## Key Features
 
-✅ **Support for multiple joke types:**
+Support for multiple joke types:
 - Single: A joke in one line
 - Twopart: A joke with setup and delivery
 
-✅ **Robust Error Handling:**
+Robust Error Handling:
 - Catches API errors
 - Catches parsing errors
 - Returns default values
 
-✅ **Available Categories:**
+Available Categories:
 - `Any` - Any joke
 - `Programming` - Programming jokes
 - `Knock-Knock` - Knock-knock jokes
