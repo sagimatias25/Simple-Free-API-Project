@@ -107,22 +107,14 @@ https://v2.jokeapi.dev/joke/{category}
 ```
 
 **Available Categories:**
-- `Any` - Any category
-- `Programming`
-- `Knock-Knock`
-- `General`
-- `Dark`
-- and more...
+ `Any` - Any category
+ `Programming`
+ `General`
+ `Dark`
+ and more...
 
 ---
 
-## Future Improvements
-
-- [ ] Add UI with tkinter or Flask
-- [ ] Save jokes to a database
-- [ ] Create our own API for sharing jokes
-- [ ] Add unit tests
-- [ ] Docker support
 
 ---
 
