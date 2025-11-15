@@ -1,6 +1,5 @@
 import requests
 
-# Define the endpoint URL for a random joke
 url = 'https://v2.jokeapi.dev/joke/Any'
 
 try:
@@ -16,7 +15,6 @@ try:
         else:
             joke_text = str(joke_data)
 
-        # Print the joke text
         print(joke_text)
 
         category = 'Programming'
@@ -43,3 +41,4 @@ except requests.exceptions.RequestException as e:
     print(f"An error occurred: {e}")
 except Exception as e:
     print(f"An unexpected error occurred: {e}")
+
