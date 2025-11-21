@@ -129,12 +129,29 @@ We welcome contributions! Here's how to help:
 5. Open a Pull Request
 
 ---
+##  Copyright & Protection
 
-## License
+**This project is public but protected against unauthorized copying or use.**
 
-This project is open for free use.
+All code, documentation, and associated materials are the intellectual property of the author. While the repository is publicly accessible, any reproduction, modification, or distribution of this code for commercial purposes without explicit permission is prohibited.
+
+##  License
+
+This project is provided as-is for educational and authorized use only.
+
+##  Contributing
+
+Contributions are welcome! Please feel free to submit issues or pull requests.
+
+##  Support
+
+For issues, questions, or feedback, please open an issue on GitHub.
 
 ---
+
+**Author**: Sagi Matias (sagimatias25)
+**Created**: November 2025
+**Status**: Active Development
 
 ## Contact
 
